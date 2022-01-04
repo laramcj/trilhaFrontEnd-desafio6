@@ -1,0 +1,101 @@
+fieldset{
+    border: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+input{
+    border-radius: 5px;
+    padding: 0.5em;
+    border: 1.5px solid #CFD6E0;
+}
+
+#message{
+    border-radius: 5px;
+    padding: 0.5em;
+    border: 1.5px solid #CFD6E0;
+    width: 100% !important;
+}
+
+.main__content-form {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #CFD6E0;
+    margin-bottom: 5px;
+    width: max-content;
+}
+
+label{
+    display: none;
+}
+
+.form-nameemail{
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5px;
+    align-items: center;
+    justify-self: stretch;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.form-subtext{
+    width: 90%;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    grid-row-gap: 5px;
+    justify-self: stretch;
+}
+
+.main__btn{
+    font-size: 2rem;
+    padding: 14px 32px;
+    border: none;
+    margin-top: 2rem;
+    margin-left: 25px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+    border-radius: 10px;
+    background-color: #EFC9FA;
+    box-shadow: 0 10px #2F4C73 ;
+}
+
+.main__btn a{
+    position: relative;
+    z-index: 2;
+    color: #2F4C73;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.main__btn:after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #ffffff;
+    transition: all 0.35s;
+    border-radius: 10px;
+}
+
+.main__btn:hover{
+    color: #ffffff;
+}
+
+.main__btn:hover:after{
+    width: 100%;
+}
+
+.form-control.ng-touched.ng-invalid {
+    border:1px solid red;
+}
+
+.form-control.ng-touched.ng-valid {
+    border: 1px solid green;
+}

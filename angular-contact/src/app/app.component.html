@@ -3,12 +3,10 @@
   <nav class="navbar">
     <div class="navbar__container">
       <a href="/" id="navbar__logo"> <strong>Logotype</strong> </a>
-      <div class="navbar__toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-      <ul class="navbar__menu">
+
+        <img *ngIf="mobile" (click)="enableMenu()" id="mobile-menu" src="https://img.icons8.com/android/24/000000/menu.png" />
+      
+      <ul  class="navbar__menu"  >
         <li class="navbar__item">
           <a href="/" class="navbar__links">Home</a>
         </li>
@@ -38,23 +36,9 @@
         <h1>Questions?</h1>
         <h2>Contact us :)</h2>
 
-        <form>
-          <fieldset class="form-nameemail">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" placeholder="Name" required />
-            <label for="email">Email</label>
-            <input type="email" name="Email" id="email" placeholder="Email" required />
-          </fieldset>
-          <fieldset class="form-subtext">
-            <label for="subject">Subject</label>
-            <input type="text" name="subject" id="subject" placeholder="Subject" />
-            <textarea row="6" style="width: 26em" id="message" name="message" placeholder="Message"></textarea>
-          </fieldset>
-        </form>
+        <app-contact></app-contact>
 
-        <button class="main__btn">
-          <a href="#"><strong> Send </strong></a>
-        </button>
+        
       </div>
       <div class="main__img--container">
         <img id="main__img" src="../assets/images/image-contact.jpg"
@@ -63,6 +47,5 @@
     </div>
   </div>
 
-  <script src="./app.js"></script>
 </body>
 <router-outlet></router-outlet>
