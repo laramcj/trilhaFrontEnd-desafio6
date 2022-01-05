@@ -8,32 +8,28 @@ import { Component, HostListener } from '@angular/core';
 
 export class AppComponent {
   title = 'angular-contact';
-  mobile = true;
+  responsivity = true;
   toggle = false;
-  
 
   @HostListener('window:resize', ['$event'])
-  onresize(event) {
+  onResize(event) {
     event.target.innerWidth;
     if (window.screen.width <= 960) { 
-      this.mobile = true;
+      this.responsivity = false;
+      console.log('atingi o tamanho')
     } else{
-      this.mobile = false;
+      this.responsivity = true;
     }
   }
 
-  isActive = false;
-
-  enableMenu(){
-    if (!this.toggle){
-      this.toggle = true;
-      this.isActive = true;
-
-        } else{
-          this.toggle = false;
-          
-        }
-  }
+  // enableMenu(){
+  //   console.log('toggle tá rolando')
+  //   if (!this.toggle){
+  //     this.toggle = true;
+  //       } else{
+  //         this.toggle = false;
+  //       }
+  // }
 
   ngOnInit() {
     

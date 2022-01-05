@@ -3,10 +3,10 @@
   <nav class="navbar">
     <div class="navbar__container">
       <a href="/" id="navbar__logo"> <strong>Logotype</strong> </a>
-
-        <img *ngIf="mobile" (click)="enableMenu()" id="mobile-menu" src="https://img.icons8.com/android/24/000000/menu.png" />
       
-      <ul  class="navbar__menu"  >
+      <img *ngIf="!responsivity" (click)="toggle=!toggle" id="mobile-menu" src="https://img.icons8.com/android/24/000000/menu.png" />
+
+      <ul *ngIf="responsivity || toggle" [ngClass]="{'menu1' : toggle}" class="navbar__menu">
         <li class="navbar__item">
           <a href="/" class="navbar__links">Home</a>
         </li>
@@ -26,6 +26,7 @@
           <a href="/" class="button"><strong>Log In</strong></a>
         </li>
       </ul>
+
     </div>
   </nav>
 
@@ -38,7 +39,7 @@
 
         <app-contact></app-contact>
 
-        
+
       </div>
       <div class="main__img--container">
         <img id="main__img" src="../assets/images/image-contact.jpg"

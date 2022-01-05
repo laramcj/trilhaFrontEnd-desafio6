@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Contact } from "./contact";
+import { ContactService } from "./contact.service";
 
 @Component({
   selector: 'app-contact',
@@ -9,6 +11,8 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 export class ContactComponent implements OnInit{
 
   contactForm: FormGroup;
+  contact: any;
+  contactService: any;
 
   ngOnInit(){
 
@@ -24,6 +28,13 @@ export class ContactComponent implements OnInit{
   clicksub() {
     console.log(this.contactForm.value);
     this.contactForm.reset();
+
+    
+
+    const newContact: Contact = { 'id': 1, 'name': "Nome de Teste da Silva", 'email': "beltrano@nttdata.com.br", 'message': "Teste de mensagem para o desafio"} as Contact;
+    this.contactService
+      .addContact(newContact)
+      .subscribe(contact => this.contact.push(contact));
   }
 
   get name() {
@@ -41,5 +52,7 @@ export class ContactComponent implements OnInit{
   get message() {
     return this.contactForm.get('message');
   }
+
+  
 
 }

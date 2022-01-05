@@ -164,12 +164,12 @@ body{
     
     .navbar__container{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         height: 80px;
         z-index: 1;
         width: 100%;
         max-width: 1300px;
-        padding: 0;
+        padding: 20px;
     }
 
     .navbar__menu{
@@ -181,12 +181,19 @@ body{
         top: -1000px;
         opacity: 0;
         transition: all 0.5s ease;
-        height: 90vh;
+        height: 70px;
         z-index: -1;
         background: #ffffff;
     }
+    
+    #mobile-menu{
+        height: 30px;
+        width: 30px;
+        margin-right: 15px;
 
-    .active .navbar__menu.active{
+    }
+
+    .menu1 .navbar__menu.active{
         background: #ffffff;
         top: 100%;
         opacity: 1;
@@ -197,10 +204,10 @@ body{
     }
 
     #navbar__logo{
-        padding-left: 25px;
+        padding-left: 0px;
     }
 
-    .active .navbar__toggle{
+    .menu1 .navbar__toggle{
         width: 25px;
         height: 3px;
         margin: 5px auto;
@@ -208,29 +215,22 @@ body{
         background: #2F4C73;
     }
 
-    .active .navbar__item {
+    .menu1  .navbar__item {
         width: 100%;
     }
 
-    .active .navbar__links {
+    .menu1  .navbar__links {
         text-align: center;
         padding: 2rem;
         width: 100%;
         display: table;
     }
 
-    #mobile-menu {
-        position: absolute;
-        top: 20%;
-        right: 5%;
-        transform: translate(5%, 10%);
-    }
-
-    .active .navbar__btn {
+    .menu1  .navbar__btn {
         padding-bottom: 2rem;
     }
 
-    .button {
+    .menu1 .button {
         display: flex;
         justify-content: center;
         align-items: center;
