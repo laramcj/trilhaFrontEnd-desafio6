@@ -1,38 +1,23 @@
+import { FormGroup } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
+import { ContactComponent } from './contact.component';
+import { Observable, of } from 'rxjs';
 
-
-import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-
-import {Contact} from './contact'
-import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
-
-const httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      Authorization: 'my-auth-token'
-    })
-  };
-  
-  @Injectable()
-  export class ContactService {
-    contactUrl = 'http://localhost:3000/contact-us';  // URL to web api
-    private handleError: HandleError;
-  
-    constructor(
-      private http: HttpClient,
-      httpErrorHandler: HttpErrorHandler) {
-      this.handleError = httpErrorHandler.createHandleError('HeroesService');
-    }
-  
-    /** POST: add a new hero to the database */
-    addContact(contact: Contact): Observable<Contact> {
-      return this.http.post<Contact>(this.contactUrl, contact, httpOptions)
-        .pipe(
-          catchError(this.handleError('addContact', contact))
-        );
-    }
+@Injectable({
+  providedIn: 'root'
+})
+export class ContactService {
+  showMessage(arg0: string) {
+    throw new Error("Method not implemented.");
   }
-  
+
+  baseUrl = "http://localhost:3000/contact-us"
+
+  constructor(private http: HttpClient) { }
+
+  enviar(contact : any) {
+    console.log("Serviço respondendo!", contact)
+    this.http.post(this.baseUrl, contact).subscribe();
+  }
+}
