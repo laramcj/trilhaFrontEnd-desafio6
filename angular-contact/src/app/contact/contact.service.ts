@@ -18,7 +18,7 @@ const httpOptions = {
   
   @Injectable()
   export class ContactService {
-    contactUrl = 'contact-us';  // URL to web api
+    contactUrl = 'http://localhost:3000/contact-us';  // URL to web api
     private handleError: HandleError;
   
     constructor(

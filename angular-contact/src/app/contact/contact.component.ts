@@ -27,11 +27,20 @@ export class ContactComponent implements OnInit{
 
   clicksub() {
     console.log(this.contactForm.value);
-    this.contactForm.reset();
+    console.log(this.message.value);
+    // this.contactForm.reset();
 
-    
+    const newContact: Contact = {
+      id: 0,
+      name: this.name.value,
+      email: this.email.value,
+      subject: this.subject.value,
+      message: this.message.value
+    }
+    console.log(newContact);
+    return
 
-    const newContact: Contact = { 'id': 1, 'name': "Nome de Teste da Silva", 'email': "beltrano@nttdata.com.br", 'message': "Teste de mensagem para o desafio"} as Contact;
+    const newContact2: Contact = { 'id': 1, 'name': "Nome de Teste da Silva", 'email': "beltrano@nttdata.com.br", 'message': "Teste de mensagem para o desafio"} as Contact;
     this.contactService
       .addContact(newContact)
       .subscribe(contact => this.contact.push(contact));

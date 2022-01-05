@@ -1,0 +1,29 @@
+<nav class="navbar">
+    <div class="navbar__container">
+      <a href="/" id="navbar__logo"> <strong>Logotype</strong> </a>
+      
+      <img *ngIf="!responsivity" (click)="toggle=!toggle" id="mobile-menu" src="https://img.icons8.com/android/24/000000/menu.png" />
+
+      <ul *ngIf="responsivity || toggle" [ngClass]="{'menu1' : toggle}" class="navbar__menu">
+        <li class="navbar__item">
+          <a href="/" class="navbar__links">Home</a>
+        </li>
+        <li class="navbar__item">
+          <a href="/" class="navbar__links">Products</a>
+        </li>
+        <li class="navbar__item">
+          <a href="/" class="navbar__links">Download</a>
+        </li>
+        <li class="navbar__item">
+          <a href="/" class="navbar__links">Store</a>
+        </li>
+        <li class="navbar__item">
+          <a href="/" class="navbar__links">Contact Us</a>
+        </li>
+        <li class="navbar__btn">
+          <a href="/" class="button"><strong>Log In</strong></a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>

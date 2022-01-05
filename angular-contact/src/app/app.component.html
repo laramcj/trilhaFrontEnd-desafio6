@@ -1,46 +1,13 @@
 <body>
 
-  <nav class="navbar">
-    <div class="navbar__container">
-      <a href="/" id="navbar__logo"> <strong>Logotype</strong> </a>
-      
-      <img *ngIf="!responsivity" (click)="toggle=!toggle" id="mobile-menu" src="https://img.icons8.com/android/24/000000/menu.png" />
-
-      <ul *ngIf="responsivity || toggle" [ngClass]="{'menu1' : toggle}" class="navbar__menu">
-        <li class="navbar__item">
-          <a href="/" class="navbar__links">Home</a>
-        </li>
-        <li class="navbar__item">
-          <a href="/" class="navbar__links">Products</a>
-        </li>
-        <li class="navbar__item">
-          <a href="/" class="navbar__links">Download</a>
-        </li>
-        <li class="navbar__item">
-          <a href="/" class="navbar__links">Store</a>
-        </li>
-        <li class="navbar__item">
-          <a href="/" class="navbar__links">Contact Us</a>
-        </li>
-        <li class="navbar__btn">
-          <a href="/" class="button"><strong>Log In</strong></a>
-        </li>
-      </ul>
-
-    </div>
-  </nav>
+  <app-nav></app-nav>
 
   <!-- Contact Section -->
   <div class="main">
     <div class="main__container">
-      <div class="main__content">
-        <h1>Questions?</h1>
-        <h2>Contact us :)</h2>
 
-        <app-contact></app-contact>
+      <app-contact></app-contact>
 
-
-      </div>
       <div class="main__img--container">
         <img id="main__img" src="../assets/images/image-contact.jpg"
           alt="Imagem possui um desenho de uma pessoa correndo com um avião de papel lilás na mão." />

@@ -99,3 +99,21 @@ label{
 .form-control.ng-touched.ng-valid {
     border: 1px solid green;
 }
+
+@media screen and (max-width: 480px){
+    .form-nameemail{
+        display: flex;
+        flex-direction: column;
+        justify-self: stretch;
+    }
+
+    #name {
+        margin-bottom: 5px;
+        justify-self: stretch;
+    }
+    
+    #email{
+        margin-bottom: 5px;
+        justify-self: stretch;
+    }
+}
