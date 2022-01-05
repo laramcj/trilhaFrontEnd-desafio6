@@ -31,6 +31,7 @@ export class ContactComponent implements OnInit{
   onSubmit() {
     console.log(this.contact.value);
     this.service.enviar(this.contact.value);
+    this.contact.reset();
   }
 
   
