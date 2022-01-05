@@ -21,7 +21,8 @@
       <input type="text" id="subject" class="form-control" formControlName="subject" placeholder="Subject" />
       <small *ngIf="subject.invalid && subject.touched" class="text-danger">
         Subject is Required</small>
-      <textarea row="6" style="width: 26em" id="message" class="form-control" formControlName="message"
+
+      <textarea row="6" style="width: 30px" id="message" class="form-control" formControlName="message"
         placeholder="Message"></textarea>
       <small *ngIf="message.invalid && message.touched" class="text-danger">Message
         is Required(minimus length 10)</small>

@@ -35,15 +35,16 @@ input{
     border: 1.5px solid #CFD6E0;
 }
 
-#message{
+textarea{
     border-radius: 5px;
     padding: 0.5em;
     border: 1.5px solid #CFD6E0;
     width: 100% !important;
+    height: 50px;
 }
 
 .main__content-form {
-    margin-top: 1rem;
+    margin-top: 5px;
     font-size: 1rem;
     font-weight: 700;
     color: #CFD6E0;
@@ -126,10 +127,13 @@ label{
 }
 
 .text-danger{
-    display: flex;
-    flex-direction:column;
+    // display: flex;
+    // flex-direction:column;
     color: red;
-    text-align: center;
+    // text-align: center;
+    // padding-top: 0px;
+    // padding-bottom: 0px;
+    // margin-bottom: 0px;
 }
 
 @media screen and (max-width: 768px){
