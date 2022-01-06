@@ -12,10 +12,10 @@ import { ContactService } from "./contact.service";
 export class ContactComponent implements OnInit{
 
   contact = new FormGroup({
-    'name' : new FormControl(null, Validators.required),
-    'email' : new FormControl(null, [Validators.required, Validators.email]),
-    'subject' : new FormControl(null, Validators.required),
-    'message' : new FormControl(null, [Validators.required, Validators.minLength(10)] )
+    name : new FormControl(null, Validators.required),
+    email : new FormControl(null, [Validators.required, Validators.email]),
+    subject : new FormControl(null, Validators.required),
+    message : new FormControl(null, [Validators.required, Validators.minLength(10)] )
   });
 
   constructor(private http: HttpClient,
@@ -30,8 +30,15 @@ export class ContactComponent implements OnInit{
 
   onSubmit() {
     console.log(this.contact.value);
-    this.service.enviar(this.contact.value);
-    this.contact.reset();
+    this.service.enviar(this.contact.value).subscribe({
+      next:(response:Contact) => {
+        console.log(response);
+        this.contact.reset();
+      },
+      error:(error:any) => {
+        console.error(error)
+      }
+    });
   }
 
   

@@ -16,13 +16,15 @@ export class AppComponent {
     event.target.innerWidth;
     if (window.screen.width <= 960) { 
       this.responsivity = false;
-      console.log('atingi o tamanho')
     } else{
       this.responsivity = true;
     }
   }
 
-  ngOnInit() {
-    
+  ngOnInit(): void {
+    if (window.innerWidth <= 1060) {
+      this.responsivity = true
+    }
+
   }
 }

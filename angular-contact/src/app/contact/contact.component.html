@@ -19,8 +19,8 @@
     <fieldset class="form-subtext">
       <label for="subject">Subject</label>
       <input type="text" id="subject" class="form-control" formControlName="subject" placeholder="Subject" />
-      <small *ngIf="subject.invalid && subject.touched" class="text-danger">
-        Subject is Required</small>
+      <!-- <small *ngIf="subject.invalid && subject.touched" class="text-danger">
+        Subject is Required</small> -->
 
       <textarea row="6" style="width: 30px" id="message" class="form-control" formControlName="message"
         placeholder="Message"></textarea>
